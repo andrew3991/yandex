@@ -1,0 +1,15 @@
+{
+  "name": "yandex",
+  "version": "1.0.0",
+  "description": "Project postman test yandex",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "api-tests-yandex": "newman run tests/yandex.postman_collection.json"
+  },
+  "author": "Andrey",
+  "dependencies": {
+    "newman": "^3.9.3"
+  }
+}
