@@ -1,0 +1,133 @@
+{
+	"info": {
+		"name": "ЯндексСловарь",
+		"_postman_id": "6a5956ce-c0d2-679b-d796-e6fe13b4f969",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "63a72e19-8930-4899-a2d3-81ac7facce25",
+						"type": "text/javascript",
+						"exec": [
+							"// code is 200",
+							"if (responseCode.code === 200)",
+							"{",
+							"    tests[\"code is 200\"] = true;",
+							"    // response is not empty",
+							"}else{",
+							"    tests[\"code is \" + responseCode.code.toString()] = false;",
+							"}",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20180117T160558Z.047661c3dc3742cf.25cfa5af660a626b892702eb5d8d63b2590a3523&lang=ru-ru&text=лягушка",
+					"protocol": "https",
+					"host": [
+						"dictionary",
+						"yandex",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"dicservice.json",
+						"lookup"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "dict.1.1.20180117T160558Z.047661c3dc3742cf.25cfa5af660a626b892702eb5d8d63b2590a3523",
+							"equals": true
+						},
+						{
+							"key": "lang",
+							"value": "ru-ru",
+							"equals": true
+						},
+						{
+							"key": "text",
+							"value": "лягушка",
+							"equals": true
+						}
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0435a55c-161d-4151-9da5-5c94677db21f",
+						"type": "text/javascript",
+						"exec": [
+							"jb = JSON.parse(responseBody);",
+							"regexp = /^[a-z]{2}-[a-z]{2}$/;",
+							"",
+							"for(i=0; i<=jb.length; i++){",
+							"    if(regexp.test(jb[i-1])===true){",
+							"        tests[\"Strings is valid\"] = true;",
+							"    }else{",
+							"        tests[\"Strings is \" + jb[i-1]] = false;",
+							"    }",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://dictionary.yandex.net/api/v1/dicservice.json/getLangs?key=dict.1.1.20180117T160558Z.047661c3dc3742cf.25cfa5af660a626b892702eb5d8d63b2590a3523",
+					"protocol": "https",
+					"host": [
+						"dictionary",
+						"yandex",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"dicservice.json",
+						"getLangs"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "dict.1.1.20180117T160558Z.047661c3dc3742cf.25cfa5af660a626b892702eb5d8d63b2590a3523",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
