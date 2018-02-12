@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="yandex" time="0.34199999999999997">
+  <testsuite name="1" id="3ed7c18f-9ae1-4d01-ba39-7687d2be54aa" tests="1" time="0.303">
+    <testcase name="code is 200" time="0.303"/>
+  </testsuite>
+  <testsuite name="2" id="aab0fd5c-8f4b-4a36-97b5-b56c2ee75958" tests="6" time="0.039">
+    <testcase name="Strings is undefined" time="0.039">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+    <testcase name="Strings is valid" time="0.039"/>
+    <testcase name="Strings is mhr-ru" time="0.039">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+    <testcase name="Strings is mrj-ru" time="0.039">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+    <testcase name="Strings is ru-mhr" time="0.039">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+    <testcase name="Strings is ru-mrj" time="0.039">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,9 +1,10 @@
 {
+	"variables": [],
 	"info": {
-		"name": "ЯндексСловарь",
+		"name": "yandex",
 		"_postman_id": "6a5956ce-c0d2-679b-d796-e6fe13b4f969",
 		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
@@ -19,36 +20,13 @@
 							"{",
 							"    tests[\"code is 200\"] = true;",
 							"    // response is not empty",
-							"    if(responseBody !== '')",
-							"    {",
-							"        tests[\"Body of response is not empty\"] = true;",
-							"            var testStr = 'noun'",
-							"            var responseBodyJSON = JSON.parse(responseBody);",
-							"            var strfromJSON = responseBodyJSON.def[0].pos;",
-							"            if (testStr === strfromJSON)",
-							"            {",
-							"                tests[\"Strings is noun\"] = true;",
-							"            }",
-							"            else",
-							"            {",
-							"                tests[\"Strings is noun\"] = false;",
-							"            }",
-							"    }else{",
-							"        tests[\"Body of response is not empty\"] = false;",
-							"    }",
 							"}else{",
 							"    tests[\"code is \" + responseCode.code.toString()] = false;",
 							"}",
 							"",
 							"",
-							"let yanSchema = {",
-							"    \"type\" : \"integer\"",
-							"};",
 							"",
-							"let jsonData = JSON.parse(responseBody);",
 							"",
-							"tests[\"Response is valid\"] = tv4.validate(jsonData, yanSchema);",
-							"console.log(jsonData);",
 							"",
 							"",
 							"",
@@ -60,9 +38,6 @@
 				}
 			],
 			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
 				"url": {
 					"raw": "https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20180117T160558Z.047661c3dc3742cf.25cfa5af660a626b892702eb5d8d63b2590a3523&lang=ru-ru&text=лягушка",
 					"protocol": "https",
@@ -81,20 +56,27 @@
 						{
 							"key": "key",
 							"value": "dict.1.1.20180117T160558Z.047661c3dc3742cf.25cfa5af660a626b892702eb5d8d63b2590a3523",
-							"equals": true
+							"equals": true,
+							"description": ""
 						},
 						{
 							"key": "lang",
 							"value": "ru-ru",
-							"equals": true
+							"equals": true,
+							"description": ""
 						},
 						{
 							"key": "text",
 							"value": "лягушка",
-							"equals": true
+							"equals": true,
+							"description": ""
 						}
-					]
+					],
+					"variable": []
 				},
+				"method": "GET",
+				"header": [],
+				"body": {},
 				"description": null
 			},
 			"response": []
@@ -105,7 +87,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0435a55c-161d-4151-9da5-5c94677db21f",
 						"type": "text/javascript",
 						"exec": [
 							"jb = JSON.parse(responseBody);",
@@ -123,9 +104,6 @@
 				}
 			],
 			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
 				"url": {
 					"raw": "https://dictionary.yandex.net/api/v1/dicservice.json/getLangs?key=dict.1.1.20180117T160558Z.047661c3dc3742cf.25cfa5af660a626b892702eb5d8d63b2590a3523",
 					"protocol": "https",
@@ -144,10 +122,16 @@
 						{
 							"key": "key",
 							"value": "dict.1.1.20180117T160558Z.047661c3dc3742cf.25cfa5af660a626b892702eb5d8d63b2590a3523",
-							"equals": true
+							"equals": true,
+							"description": ""
 						}
-					]
-				}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": null
 			},
 			"response": []
 		}
